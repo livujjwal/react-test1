@@ -7,7 +7,7 @@ const Calculator = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   console.log(error, success);
-  function calculation() {
+  function calculation(operation) {
     setSuccess("");
     if (inputNum1 == 0) {
       setSuccess("");
@@ -19,11 +19,32 @@ const Calculator = () => {
       console.log(inputNum1, inputNum2);
       setSuccess("Result - ");
       setError("");
-      let ans = Number(inputNum1)+ Number(inputNum1)
-      console.log(ans);
-      setResult(ans);
-      setInputNum1("")
-      setInputNum2("")
+      switch (operation) {
+        case "+":
+        setResult(Number(inputNum1)+ Number(inputNum2));
+        setInputNum1("")
+        setInputNum2("")
+        break;
+        case "-":
+        setResult(Number(inputNum1)-Number(inputNum2));
+        setInputNum1("")
+        setInputNum2("")
+        break;
+        case "*":
+        setResult(Number(inputNum1) * Number(inputNum2));
+        setInputNum1("")
+        setInputNum2("")
+        break;
+        case "/":
+        setResult(Number(inputNum1)/ Number(inputNum2));
+        setInputNum1("")
+        setInputNum2("")
+ 
+        break;
+        default: setError("Out of Scope")
+            break;
+      }
+      
     }
   }
   return (
@@ -50,16 +71,16 @@ const Calculator = () => {
         />
       </div>
       <div className="btn-section">
-        <button className="btn" onClick={calculation} >
+        <button className="btn" onClick={() => {calculation("+")} } >
           <FaPlus className="btn-icon"/>
         </button>
-        <button className="btn" onClick={calculation} >
+        <button className="btn" onClick={() => {calculation("-")} }>
           <FaMinus className="btn-icon"/>
         </button>
-        <button className="btn" onClick={calculation} >
+        <button className="btn" onClick={() => {calculation("*")}} >
           <FaAsterisk className="btn-icon"/>
         </button>
-        <button className="btn" onClick={calculation} >
+        <button className="btn" onClick={() => {calculation("/")}} >
           <FaDivide className="btn-icon"/>
         </button>
       </div>
