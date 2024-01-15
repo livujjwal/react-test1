@@ -21,30 +21,29 @@ const Calculator = () => {
       setError("");
       switch (operation) {
         case "+":
-        setResult(Number(inputNum1)+ Number(inputNum2));
-        setInputNum1("")
-        setInputNum2("")
-        break;
+          setResult(Number(inputNum1) + Number(inputNum2));
+          setInputNum1("");
+          setInputNum2("");
+          break;
         case "-":
-        setResult(Number(inputNum1)-Number(inputNum2));
-        setInputNum1("")
-        setInputNum2("")
-        break;
+          setResult(Number(inputNum1) - Number(inputNum2));
+          setInputNum1("");
+          setInputNum2("");
+          break;
         case "*":
-        setResult(Number(inputNum1) * Number(inputNum2));
-        setInputNum1("")
-        setInputNum2("")
-        break;
+          setResult(Number(inputNum1) * Number(inputNum2));
+          setInputNum1("");
+          setInputNum2("");
+          break;
         case "/":
-        setResult(Number(inputNum1)/ Number(inputNum2));
-        setInputNum1("")
-        setInputNum2("")
- 
-        break;
-        default: setError("Out of Scope")
-            break;
+          setResult(Number(inputNum1) / Number(inputNum2));
+          setInputNum1("");
+          setInputNum2("");
+          break;
+        default:
+          setError("Out of Scope");
+          break;
       }
-      
     }
   }
   return (
@@ -71,17 +70,37 @@ const Calculator = () => {
         />
       </div>
       <div className="btn-section">
-        <button className="btn" onClick={() => {calculation("+")} } >
-          <FaPlus className="btn-icon"/>
+        <button
+          className="btn"
+          onClick={() => {
+            calculation("+");
+          }}
+        >
+          <FaPlus className="btn-icon" />
         </button>
-        <button className="btn" onClick={() => {calculation("-")} }>
-          <FaMinus className="btn-icon"/>
+        <button
+          className="btn"
+          onClick={() => {
+            calculation("-");
+          }}
+        >
+          <FaMinus className="btn-icon" />
         </button>
-        <button className="btn" onClick={() => {calculation("*")}} >
-          <FaAsterisk className="btn-icon"/>
+        <button
+          className="btn"
+          onClick={() => {
+            calculation("*");
+          }}
+        >
+          <FaAsterisk className="btn-icon" />
         </button>
-        <button className="btn" onClick={() => {calculation("/")}} >
-          <FaDivide className="btn-icon"/>
+        <button
+          className="btn"
+          onClick={() => {
+            calculation("/");
+          }}
+        >
+          <FaDivide className="btn-icon" />
         </button>
       </div>
       <div className="result">
@@ -90,7 +109,7 @@ const Calculator = () => {
         ) : (
           <div className="error">
             <h2 className="err"> Error </h2>
-            <h2 > {error} </h2>
+            <h2> {error} </h2>
           </div>
         )}
         {success == "" ? (
@@ -98,7 +117,10 @@ const Calculator = () => {
         ) : (
           <div className="success">
             <h2 className="suc"> Success </h2>
-            <h2 > {success} {result}</h2>
+            <h2>
+              {" "}
+              {success} {result}
+            </h2>
           </div>
         )}
       </div>
