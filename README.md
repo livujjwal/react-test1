@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Getting Started with Create React Calculator
+1. Project demo lonk - https://react-test1-bice.vercel.app/
 
-This project was ripo - (https://github.com/livujjwal/react-test1.git).
+2. Project was ripo - (https://github.com/livujjwal/react-test1.git).
 
 ## Screenshot of project
 ![Screenshot (9)](https://github.com/livujjwal/react-test1/assets/132872642/7e21dbe7-2aaa-4c6a-8df7-9d3428d5a48e)
